@@ -16,7 +16,12 @@ function Phrase(content) {
 
   // Returns content processed for palindrome testing.
   this.processedContent = function processedContent() {
-    return this.processor(this.content);
+    return this.processor(this.letters());
+  }
+
+  // Returns the letters in the content.
+  this.letters = function letters() {
+    return (this.content.match(/[a-z]/ig) || []).join("");
   }
 
   // Returns true for a palindrome, false otherwise.
